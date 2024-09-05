@@ -1,0 +1,9 @@
+def validate_dna (dna_seq):
+  seqm = dna_seq.lower()
+  valid = seqm.count("A") + seqm.count("C") + seqm.count("G") + seqm.count("T")
+  if valid == len (seqm): return print ("Gen Humano")
+  else : return print ("Gen Mutante")
+dna_seq = input ("Secuencia de proteínas:")
+seqm = dna_seq.lower()
+print (seqm)
+validate_dna(dna_seq)
