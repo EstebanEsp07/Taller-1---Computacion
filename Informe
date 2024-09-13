@@ -1,0 +1,31 @@
+dna_ent1 = input ("Inserte la secuencia de ADN de referencia: ") #Permite ingresar las cadenas de ADN a referenciar.
+dna_ent2 = input ("Inserte la secuencia de ADN a probar: ") #Permite ingresar las cadenas de ADN a comparar.
+def validate_dna1 (dna_ent1):
+ dna1_c = dna_ent1.count("A") + dna_ent1.count("C") + dna_ent1.count("G") + dna_ent1.count("T")
+ return dna1_c #Permite dar la condición de que la primera cadena solo tenga estas cuatro letras para que sea válida a través de un conteo,
+ #el cual se almacena en la variable dna1_c a partir de lo ingresado en dna_ent1.
+def validate_dna2 (dna_ent2):
+ dna2_c = dna_ent2.count("A") + dna_ent2.count("C") + dna_ent2.count("G") + dna_ent2.count("T")
+ return dna2_c 
+ #Permite dar la condición de que la segunda cadena solo tenga estas cuatro letras para que sea válida a través de un conteo,
+ #el cual se almacena en la variable dna2_c a partir de lo ingresado en dna_ent2.
+dna1_c = validate_dna1 (dna_ent1)
+dna2_c = validate_dna2 (dna_ent2)
+#Se validan ambas cadenas ingresadas y se las guarda en las variables asignadas.
+if dna1_c == len(dna_ent1): #Se verifican la longitud de las bases válidas con las ingresadas en la primera cadena, para detectar si solo se ingresaron las bases nitrogenadas válidas.
+   if len(dna_ent2) == dna2_c: 
+    #Se verifican la longitud de las bases válidas con las ingresadas en la segunda cadena, para detectar si solo se ingresaron las bases nitrogenadas válidas.
+      if dna_ent1 == dna_ent2:
+          print("No existen modificaciones genéticas")
+          #Permite dar a conocer si no existe algún cambio en las cadenas si todas las bases son válidas.
+      else:
+          print("Se dio una modificación genética")
+          #Permite dar a conocer si existe algún cambio en las cadenas si todas las bases son válidas.
+   else:
+       print("La segunda cadena no tiene bases nitrogenadas acordes al ADN")
+       #Permite dar a conocer si la segunda cadena no es válida si la primera es válida.
+else :
+     print ("La primera cadena no tiene bases nitrogenadas acordes al ADN")
+     #Permite dar a conocer si la primera cadena no es válidaes errónea una vez que la primera sea errónea.
+if not len(dna_ent2) == dna2_c : print ("La segunda cadena no tiene bases nitrogenadas acordes al ADN") 
+#Permite dar a conocer si la segunda cadena no es válida una vez que la primera no sea válida.
